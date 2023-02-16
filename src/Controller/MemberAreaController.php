@@ -6,15 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class MemberAreaController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
+    #[Route('/member/area', name: 'app_member_area')]
     public function index(): Response
     {
-
-
-
-        return $this->render('home/index.html.twig');
+        return $this->render('member_area/index.html.twig', [
+            'controller_name' => 'MemberAreaController',
+        ]);
     }
-
 }

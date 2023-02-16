@@ -30,7 +30,7 @@
                     class="nav-menu-li">
                 <a
                         class="nav-menu-a"
-                        href="{{ path('app_login') }}">Espace adhérents</a>
+                        href="{{ path('app_member_area') }}">Espace adhérents</a>
             </li>
 
             <li
@@ -39,6 +39,17 @@
                         class="nav-menu-a"
                         href="{{ path('app_contact') }}">Contact</a>
             </li>
+
+            {% if app.user %}
+                <li
+                        class="nav-menu-li">
+                    <a
+                            class="nav-menu-a"
+                            href="{{ path('app_logout') }}">Se déconnecter</a>
+                </li>
+            {% endif %}
+
+
 
         </ul>
     </nav>

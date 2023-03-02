@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
+use App\Repository\ArticleRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -49,6 +50,15 @@ class ArticleController extends AbstractController
 
     }
 
+    #[Route('/private/article/', name: 'app_private_article')]
+    public function privateArticle(ArticleRepository $articleRepository)
+    {
+        $articles = $articleRepository->findBy(['public'=>false]);
 
+
+        return $this->render('article/privateArticle.html.twig', [
+            'articles'=>$articles
+        ]);
+    }
 
 }

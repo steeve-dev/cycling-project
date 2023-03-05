@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CircuitController!{% endblock %}
+
+{% block body %}
+
+
+    <h2>Ajouter un circuit :</h2>
+
+    {{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.Distance) }}
+    {{ form_row(form.date) }}
+    <input type="submit" value="Nouveau circuit">
+    {{ form_end(form) }}
+
+{% endblock %}

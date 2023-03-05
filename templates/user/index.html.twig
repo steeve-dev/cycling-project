@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+
+    <h2>Gestion des utilisateurs :</h2>
+
+    <a href="">Ajouter un nouveau membre</a>
+
+    {% for user in users %}
+
+        <div>{{ user.username }}</div>
+
+    {% endfor %}
+
+{% endblock %}

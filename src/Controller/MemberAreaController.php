@@ -25,4 +25,8 @@ class MemberAreaController extends AbstractController
             return $this->render('security/index.html.twig');
         }
     }
+
+
+
+
 }

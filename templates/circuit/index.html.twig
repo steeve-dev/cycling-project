@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CircuitController!{% endblock %}
+
+{% block body %}
+
+
+    <h2>Circuits :</h2>
+
+    {% for circuit in circuits %}
+
+        <h3>{{ circuit.title }}</h3>
+        <p>{{ circuit.distance }}km</p>
+        <p>{{ circuit.description }}</p>
+
+    {% endfor %}
+
+
+
+{% endblock %}

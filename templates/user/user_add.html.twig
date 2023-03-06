@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.plainPassword) }}
+    {{ form_row(form.agreeTerms) }}
+    <input
+            type="submit"
+            value="Enregistrer">
+    {{ form_end(form) }}
+
+
+{% endblock %}

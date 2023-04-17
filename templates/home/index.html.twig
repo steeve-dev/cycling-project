@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Bienvenue sur le site du club cycliste de pleine fougères !{% endblock %}
 
 {% block body %}
 
@@ -36,28 +36,14 @@
                 class="home-section">
             <h2>Dernières actualités :</h2>
             <article>
-                <h3>Titre de l'article</h3>
-                <p>Contenu de l'article Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Consequatur explicabo laboriosam maiores sed sint, tempora vitae. Beatae
-                    blanditiis distinctio error fugiat, ipsum, minus nostrum perspiciatis quod
-                    sequi soluta veniam voluptatem.</p>
-            </article>
-            <article>
-                <h3>Titre de l'article</h3>
-                <p>Contenu de l'article Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Consequatur explicabo laboriosam maiores sed sint, tempora vitae. Beatae
-                    blanditiis distinctio error fugiat, ipsum, minus nostrum perspiciatis quod
-                    sequi soluta veniam voluptatem.</p>
-            </article>
-            <article>
-                <h3>Titre de l'article</h3>
-                <p>Contenu de l'article Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Consequatur explicabo laboriosam maiores sed sint, tempora vitae. Beatae
-                    blanditiis distinctio error fugiat, ipsum, minus nostrum perspiciatis quod
-                    sequi soluta veniam voluptatem.</p>
-            </article>
+                {% for article in articles %}
+                    {% if article.public %}
+                        <h3>{{ article.title}}</h3>
+                        <p>{{ article.content}}</p>
+                    {% endif %}
+                {% endfor %}
             <div>
-                <a href="">Voir tout les articles</a>
+                <a href="{{ path('app_article') }}">Voir tout les articles</a>
             </div>
         </section>
 

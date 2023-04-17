@@ -1,52 +1,68 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MemberAreaController!{% endblock %}
+{% block title %}Bienvenue sur le site du club cycliste de pleine fougères !{% endblock %}
 
 {% block body %}
 
 
-<h2>Bonjour {{ user.username }}!</h2>
+<h2 class="memberArea-title">Bonjour {{ user.username }}!</h2>
 
     <nav>
         <ul>
             <li
                     class="member-menu-li">
-                <a href="{{ path('app_add_article') }}">Ajouter un article</a>
+                <a
+                        class="member-menu-a"
+                        href="{{ path('app_add_article') }}">Ajouter un article</a>
             </li>
 
             <li
                     class="member-menu-li">
-                <a href="{{ path('app_user') }}">Gestion des utilisateurs</a>
+                <a
+                        class="member-menu-a"
+                        href="{{ path('app_user') }}">Gestion des utilisateurs</a>
             </li>
 
             <li
                     class="member-menu-li">
-                <a href="{{ path('app_add_circuit') }}">Ajouter un circuit</a>
+                <a
+                        class="member-menu-a"
+                        href="{{ path('app_add_circuit') }}">Ajouter un circuit</a>
             </li>
 
             <li
                     class="member-menu-li">
-                <a href="">Ajouter une organisation</a>
+                <a
+                        class="member-menu-a"
+                        href="">Ajouter une organisation</a>
             </li>
 
             <li
                     class="member-menu-li">
-                <a href="">Ajouter un sponsor</a>
+                <a
+                        class="member-menu-a"
+                        href="">Ajouter un sponsor</a>
             </li>
 
             <li
                     class="member-menu-li">
-                <a href="{{ path('app_private_article') }}">Voir les articles privés</a>
+                <a
+                        class="member-menu-a"
+                        href="{{ path('app_private_article') }}">Voir les articles privés</a>
             </li>
 
             <li
                     class="member-menu-li">
-                <a href="{{ path('app_circuit') }}">Les circuits</a>
+                <a
+                        class="member-menu-a"
+                        href="{{ path('app_circuit') }}">Les circuits</a>
             </li>
 
             <li
                     class="member-menu-li">
-                <a href="">Photos</a>
+                <a
+                        class="member-menu-a"
+                        href="">Photos</a>
             </li>
         </ul>
     </nav>

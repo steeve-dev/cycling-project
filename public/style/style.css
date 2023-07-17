@@ -1,6 +1,23 @@
-.home-title-club {
+.header-top {
   display: flex;
   justify-content: center;
+  width: 70%;
+  margin: auto;
+  align-items: flex-end;
+}
+
+.home-title-club {
+  margin: auto;
+  position: absolute;
+  color: #d5c24f;
+  font-size: 3rem;
+  background-color: rgba(10, 10, 10, 0.45);
+  border-radius: 15px;
+  padding: 3px;
+}
+
+.header-img {
+  width: 100%;
 }
 
 .home-img_club {
@@ -35,14 +52,12 @@
 }
 
 html {
-  background-image: url("../images/image.jpg");
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: lightcyan;
 }
 
 body {
+  background-color: #d5c24f;
   width: 75vw;
-  background-color: rgba(213, 194, 79, 0.9);
   margin: auto;
   border-radius: 15px;
 }

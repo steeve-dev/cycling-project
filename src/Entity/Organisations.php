@@ -23,6 +23,9 @@ class Organisations
     #[ORM\Column(length: 1000)]
     private ?string $descritpion = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $picture = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +63,18 @@ class Organisations
     public function setDescritpion(string $descritpion): self
     {
         $this->descritpion = $descritpion;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }

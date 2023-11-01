@@ -39,7 +39,6 @@ class ArticleController extends AbstractController
             $date = new \DateTime();
             $article->setDate($date);
             $article->setUser($currentUser);
-
             $entityManager->persist($article);
             $entityManager->flush();
 

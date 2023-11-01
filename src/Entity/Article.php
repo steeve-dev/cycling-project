@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -29,6 +31,9 @@ class Article
 
     #[ORM\Column]
     private ?bool $public = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $picture;
 
     public function getId(): ?int
     {
@@ -94,4 +99,18 @@ class Article
 
         return $this;
     }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+
 }

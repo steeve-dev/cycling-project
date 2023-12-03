@@ -6,6 +6,7 @@ use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use App\Repository\UserRepository;
+use App\services\uploadPicture;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,7 +27,7 @@ class ArticleController extends AbstractController
     }
 
     #[Route('/add/article', name: 'app_add_article')]
-    public function addArticle(EntityManagerInterface $entityManager, Request $request, UserInterface $user, UserRepository $userRepository)
+    public function addArticle(uploadPicture $uploadPicture, EntityManagerInterface $entityManager, Request $request, UserInterface $user, UserRepository $userRepository)
     {
 
         $currentUser = $userRepository->findBy(['username'=>$user->getUserIdentifier()])[0];
@@ -36,7 +37,14 @@ class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid())
         {
+            $file = $form->get('picture')->getData();
+
+            // Enregistrez l'image
+            $url = $uploadPicture->upload($file, 'Article');
+
+
             $date = new \DateTime();
+            $article->setPicture($url);
             $article->setDate($date);
             $article->setUser($currentUser);
             $entityManager->persist($article);

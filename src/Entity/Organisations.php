@@ -21,7 +21,7 @@ class Organisations
     private ?\DateTimeInterface $Date = null;
 
     #[ORM\Column(length: 1000)]
-    private ?string $descritpion = null;
+    private ?string $description = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $picture = null;
@@ -55,14 +55,14 @@ class Organisations
         return $this;
     }
 
-    public function getDescritpion(): ?string
+    public function getDescription(): ?string
     {
-        return $this->descritpion;
+        return $this->description;
     }
 
-    public function setDescritpion(string $descritpion): self
+    public function setDescription(string $description): self
     {
-        $this->descritpion = $descritpion;
+        $this->description = $description;
 
         return $this;
     }

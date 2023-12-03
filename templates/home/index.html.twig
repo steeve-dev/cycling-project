@@ -35,16 +35,20 @@
         <section
                 class="home-section">
             <h2>Dernières actualités :</h2>
-            <article>
+            <article class="home-article">
                 {% for article in articles %}
                     {% if article.public %}
                         <h3>{{ article.title}}</h3>
                         <p>{{ article.content}}</p>
+                        {% if article.picture is not null %}
+                            <img class="home-img-article" src="{{ asset(article.picture) }}" alt="">
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
-            <div>
-                <a href="{{ path('app_article') }}">Voir tout les articles</a>
-            </div>
+                <div>
+                    <a href="{{ path('app_article') }}">Voir tout les articles</a>
+                </div>
+            </article>
         </section>
 
     </div>

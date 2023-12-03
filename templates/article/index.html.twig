@@ -14,7 +14,9 @@
                     {% if article.public %}
                         <h3>{{ article.title}}</h3>
                         <p>{{ article.content}}</p>
-                        <p>{{ article.picture}}</p>
+                        {% if article.picture is not null %}
+                            <img class="home-img-article" src="{{ asset(article.picture) }}" alt="">
+                        {% endif %}
 
                     {% endif %}
                 {% endfor %}

@@ -22,6 +22,9 @@ class Links
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $picture = null;
 
+    #[ORM\Column]
+    private ?bool $sponsor = null;
+
 
     public function getId(): ?int
     {
@@ -60,6 +63,18 @@ class Links
     public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function isSponsor(): ?bool
+    {
+        return $this->sponsor;
+    }
+
+    public function setSponsor(bool $sponsor): static
+    {
+        $this->sponsor = $sponsor;
 
         return $this;
     }

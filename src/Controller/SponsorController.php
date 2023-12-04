@@ -15,4 +15,12 @@ class SponsorController extends AbstractController
             'controller_name' => 'SponsorController',
         ]);
     }
+
+    #[Route('/admin/links', name: 'edit-links')]
+    public function gallery()
+    {
+        return $this->render('sponsor/edit-sponsor.html.twig');
+    }
+
+
 }

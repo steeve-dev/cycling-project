@@ -15,4 +15,11 @@ class OrganisationController extends AbstractController
             'controller_name' => 'OrganisationController',
         ]);
     }
+
+    #[Route('/admin/organisation', name: 'edit-organisation')]
+    public function gallery()
+    {
+        return $this->render('member_area/gallery.html.twig');
+    }
+
 }

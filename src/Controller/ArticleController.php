@@ -42,7 +42,6 @@ class ArticleController extends AbstractController
             // Enregistrez l'image
             $url = $uploadPicture->upload($file, 'Article');
 
-
             $date = new \DateTime();
             $article->setPicture($url);
             $article->setDate($date);

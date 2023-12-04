@@ -26,6 +26,12 @@ class MemberAreaController extends AbstractController
         }
     }
 
+    #[Route('/member/gallery', name: 'gallery')]
+    public function gallery()
+    {
+        return $this->render('member_area/gallery.html.twig');
+    }
+
 
 
 
